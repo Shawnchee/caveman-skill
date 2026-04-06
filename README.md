@@ -4,56 +4,71 @@ Make your AI coding assistant shut up and save tokens.
 
 AI coding assistants waste up to 75% of output tokens on filler text — "I'd be happy to help!", "Let me search for that...", summaries of what they just did. **Caveman mode** makes them terse, saving real tokens and real money.
 
-## Quick Start
+## Install
 
-### Claude Code
+### Using [skills.sh](https://skills.sh) (recommended)
 
-```bash
-# From your project root:
-mkdir -p .claude/skills
-cp claude-code/caveman.md .claude/skills/caveman.md
-```
-
-Then say **"caveman mode"** in chat to activate.
-
-The skill file uses Claude Code's [SKILL.md format](https://docs.anthropic.com/en/docs/claude-code/skills) with a `trigger` field — Claude reads it automatically when you say the trigger phrase.
-
-### Cursor
+The easiest way — works with 45+ coding agents including Claude Code, Cursor, Windsurf, Codex, and more.
 
 ```bash
-# From your project root:
-cp cursor/.cursorrules-caveman .cursorrules
+# Install to your project (team can use it too)
+npx skills add Shawnchee/caveman-skill
+
+# Install globally (available in all your projects)
+npx skills add Shawnchee/caveman-skill -g
+
+# Install to a specific agent only
+npx skills add Shawnchee/caveman-skill -a claude-code
+npx skills add Shawnchee/caveman-skill -a cursor
+npx skills add Shawnchee/caveman-skill -a windsurf
+
+# Preview what's available before installing
+npx skills add Shawnchee/caveman-skill --list
+
+# CI/CD-friendly (no prompts)
+npx skills add Shawnchee/caveman-skill -g -a claude-code -y
 ```
 
-Cursor reads `.cursorrules` from the project root on every interaction. No activation step needed.
-
-### Windsurf
+### Manual install (any agent)
 
 ```bash
-# From your project root:
-cp windsurf/.windsurfrules-caveman .windsurfrules
+git clone https://github.com/Shawnchee/caveman-skill.git
 ```
 
-Windsurf reads `.windsurfrules` from the project root on every interaction. No activation step needed.
+Then copy the skill file to your agent's skills directory:
 
-### GitHub Copilot
+| Agent | Project-level | Global |
+|-------|--------------|--------|
+| Claude Code | `.claude/skills/` | `~/.claude/skills/` |
+| Cursor | `.cursor/skills/` | `~/.cursor/skills/` |
+| Windsurf | `.windsurf/skills/` | `~/.windsurf/skills/` |
+| Codex / OpenCode | `.codex/skills/` | `~/.codex/skills/` |
+| Gemini CLI | `.gemini/skills/` | `~/.gemini/skills/` |
+| Antigravity | Project config directory | — |
+
+> **Note:** Skill directory paths may vary by agent version. Claude Code paths are verified; other agent paths follow the emerging SKILL.md standard and may need adjustment.
+
+Example:
 
 ```bash
-# From your project root:
-mkdir -p .github
-cp copilot/caveman-instructions.md .github/copilot-instructions.md
+# Project-level (just this repo)
+cp caveman-skill/claude-code/caveman.md .claude/skills/caveman.md
+
+# Global (all your projects)
+cp caveman-skill/claude-code/caveman.md ~/.claude/skills/caveman.md
 ```
 
-Copilot reads `.github/copilot-instructions.md` as custom instructions for your repository. Works in VS Code, JetBrains, and GitHub.com.
+For Claude Code, say **"caveman mode"** in chat to activate the skill.
 
-### Antigravity
+### Uninstall
 
 ```bash
-# Copy to your project's config directory:
-cp antigravity/caveman-instructions.md <your-project-config-dir>/caveman-instructions.md
-```
+# Via skills.sh
+npx skills remove caveman-skill
 
-Refer to Antigravity's documentation for the exact config path in your project.
+# Manual
+rm -rf .claude/skills/caveman.md
+```
 
 ## What It Does
 
