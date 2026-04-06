@@ -14,7 +14,7 @@ Thanks for your interest in improving caveman-skill.
 
 The rules should stay consistent across all IDE files. If you change a rule:
 
-1. Update `claude-code/caveman.md` first (this is the canonical source)
+1. Update `caveman/SKILL.md` first (this is the canonical source)
 2. Apply the same change to all other IDE files
 3. If the change affects response style, re-run the benchmarks
 

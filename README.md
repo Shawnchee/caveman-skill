@@ -52,10 +52,10 @@ Example:
 
 ```bash
 # Project-level (just this repo)
-cp caveman-skill/claude-code/caveman.md .claude/skills/caveman.md
+cp -r caveman-skill/caveman .claude/skills/
 
 # Global (all your projects)
-cp caveman-skill/claude-code/caveman.md ~/.claude/skills/caveman.md
+cp -r caveman-skill/caveman ~/.claude/skills/
 ```
 
 For Claude Code, say **"caveman mode"** in chat to activate the skill.
@@ -67,7 +67,7 @@ For Claude Code, say **"caveman mode"** in chat to activate the skill.
 npx skills remove caveman-skill
 
 # Manual
-rm -rf .claude/skills/caveman.md
+rm -rf .claude/skills/caveman
 ```
 
 ## What It Does
@@ -135,7 +135,7 @@ LLMs default to being polite and verbose. A system-level instruction overriding 
 
 | IDE | Config Format | Config Location |
 |-----|---------------|-----------------|
-| Claude Code | SKILL.md with YAML frontmatter | `.claude/skills/caveman.md` |
+| Claude Code | SKILL.md with YAML frontmatter | `.claude/skills/caveman/SKILL.md` |
 | Cursor | Plain markdown | `.cursorrules` (project root) |
 | Windsurf | Plain markdown | `.windsurfrules` (project root) |
 | GitHub Copilot | Plain markdown | `.github/copilot-instructions.md` |
