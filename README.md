@@ -58,13 +58,13 @@ cp -r caveman-skill/caveman .claude/skills/
 cp -r caveman-skill/caveman ~/.claude/skills/
 ```
 
-For Claude Code, say **"caveman mode"** in chat to activate the skill.
+The skill activates automatically once installed — your agent reads it on every interaction.
 
 ### Uninstall
 
 ```bash
 # Via skills.sh
-npx skills remove caveman-skill
+npx skills remove caveman
 
 # Manual
 rm -rf .claude/skills/caveman
