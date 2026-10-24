@@ -24,7 +24,7 @@
 
 ---
 
-A skill for [Claude Code](https://docs.anthropic.com/en/docs/claude-code), Cursor, Windsurf, Copilot, Codex, and 40+ other agents. Makes your AI stop narrating its life story and just give you the answer.
+A skill for [Claude Code](https://code.claude.com/docs), Cursor, Windsurf, Copilot, Codex, and 40+ other agents. Makes your AI stop narrating its life story and just give you the answer.
 
 Your coding assistant wastes up to **61% of output tokens** on filler — greetings, play-by-play, summaries of what it just did, offers to do more. Caveman kills all of it. One install. Every session after.
 
