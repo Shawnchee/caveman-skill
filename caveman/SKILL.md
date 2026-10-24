@@ -1,6 +1,6 @@
 ---
 name: caveman
-description: Token-saving terse mode — no filler, no narration, just results
+description: Token-saving terse mode — no filler, no narration, just results. Use when the user asks for caveman mode, terse or concise answers, fewer tokens, or less verbosity.
 ---
 
 # Caveman Mode
