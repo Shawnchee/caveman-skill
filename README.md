@@ -147,6 +147,14 @@ cp -r caveman-skill/caveman .claude/skills/
 cp -r caveman-skill/caveman ~/.claude/skills/
 ```
 
+Using a plain rules file instead? Copy it to the filename your agent reads (append if the file already exists):
+
+```bash
+cp caveman-skill/cursor/.cursorrules-caveman .cursorrules
+cp caveman-skill/windsurf/.windsurfrules-caveman .windsurfrules
+mkdir -p .github && cp caveman-skill/copilot/caveman-instructions.md .github/copilot-instructions.md
+```
+
 ### Uninstall
 
 ```bash
