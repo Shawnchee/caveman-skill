@@ -24,7 +24,7 @@
 
 ---
 
-A skill for [Claude Code](https://docs.anthropic.com/en/docs/claude-code), Cursor, Windsurf, Copilot, Codex, and 40+ other agents. Makes your AI stop narrating its life story and just give you the answer.
+A skill for [Claude Code](https://code.claude.com/docs), Cursor, Windsurf, Copilot, Codex, and 40+ other agents. Makes your AI stop narrating its life story and just give you the answer.
 
 Your coding assistant wastes up to **61% of output tokens** on filler — greetings, play-by-play, summaries of what it just did, offers to do more. Caveman kills all of it. One install. Every session after.
 
@@ -34,7 +34,7 @@ Your coding assistant wastes up to **61% of output tokens** on filler — greeti
 <tr>
 <td width="50%">
 
-### Normal (148 tokens)
+### Normal (85 tokens)
 
 > "I'll search for all TypeScript test files in your project. Let me look through the codebase for files matching common test patterns.
 >
@@ -48,7 +48,7 @@ Your coding assistant wastes up to **61% of output tokens** on filler — greeti
 </td>
 <td width="50%">
 
-### Caveman (15 tokens)
+### Caveman (26 tokens)
 
 > ```
 > - src/__tests__/auth.test.ts
@@ -145,6 +145,14 @@ cp -r caveman-skill/caveman .claude/skills/
 
 # Example: Claude Code, global
 cp -r caveman-skill/caveman ~/.claude/skills/
+```
+
+Using a plain rules file instead? Copy it to the filename your agent reads (appends, so existing rules are kept):
+
+```bash
+cat caveman-skill/cursor/.cursorrules-caveman >> .cursorrules
+cat caveman-skill/windsurf/.windsurfrules-caveman >> .windsurfrules
+mkdir -p .github && cat caveman-skill/copilot/caveman-instructions.md >> .github/copilot-instructions.md
 ```
 
 ### Uninstall

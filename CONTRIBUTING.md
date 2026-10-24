@@ -7,7 +7,7 @@ Thanks for your interest in improving caveman-skill.
 1. Create a directory named after the IDE (e.g., `zed/`)
 2. Add a caveman instructions file using that IDE's config format
 3. Keep the 10 rules identical to the existing files — only the format/frontmatter should differ
-4. Add the IDE to the "Supported IDEs" table in README.md and a Quick Start section
+4. Add the IDE to the "Supported Agents" table and the Manual install section in README.md
 5. Open a PR
 
 ## Updating the Rules
@@ -24,7 +24,7 @@ Token counts in `benchmarks/data.md` are verified with tiktoken `cl100k_base`. T
 
 ```bash
 pip install tiktoken
-python count_tokens.py  # or write your own script against the response text
+python -c "import sys, tiktoken; print(len(tiktoken.get_encoding('cl100k_base').encode(sys.stdin.read())))" < response.txt
 ```
 
 If you add new benchmark tasks:
