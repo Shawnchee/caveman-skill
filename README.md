@@ -34,7 +34,7 @@ Your coding assistant wastes up to **61% of output tokens** on filler — greeti
 <tr>
 <td width="50%">
 
-### Normal (148 tokens)
+### Normal (85 tokens)
 
 > "I'll search for all TypeScript test files in your project. Let me look through the codebase for files matching common test patterns.
 >
@@ -48,7 +48,7 @@ Your coding assistant wastes up to **61% of output tokens** on filler — greeti
 </td>
 <td width="50%">
 
-### Caveman (15 tokens)
+### Caveman (26 tokens)
 
 > ```
 > - src/__tests__/auth.test.ts
